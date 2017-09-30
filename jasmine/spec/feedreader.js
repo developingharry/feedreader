@@ -52,25 +52,42 @@ $(function() {
     });
 
     /* TODO: Write a new test suite named "The menu" */
-    // describe('The menu', function() {
-    //   it('is hidden by default', function() {
-    //     var foo = document.getElementsByTagName('body');
-    //     expect(foo.classList.contains('menu-hidden'));
-    //   });
-    // });
+
+    describe('The menu', function() {
+
+      it('is hidden by default', function() {
+        expect($('body').hasClass('menu-hidden')).toBe(true);
+      });
+
+      // it('toggles when clicked', function() {
+      //     var body = $('body');
+      //     this.trigger('click');
+      //     expect(body.attr('class')).toEqual('menu-hidden');
+      //     this.trigger('click');
+      //     expect(body.attr('class')).toEqual('menu-hidden');
+      // });
+      //
+      // it("toggles when clicked", function() {
+      //     var clickFunction = function()
+      //     spyOn(body, "clickFunction");
+      //     // Notice how you pass a real object and a method name to spyOn
+      //     $('#fieldID').click();
+      //     expect(cc.clickFunction).toHaveBeenCalled();
+      //     // Notice how you pass the method, and not the method call result
+      // });
+
+      // Latest state of play is neither of the above work
 
 
-    /* TODO: Write a test that ensures the menu element is
-     * hidden by default. You'll have to analyze the HTML and
-     * the CSS to determine how we're performing the
-     * hiding/showing of the menu element.
-     */
+      // end brace of menu tests is below this line
+    });
 
     /* TODO: Write a test that ensures the menu changes
      * visibility when the menu icon is clicked. This test
      * should have two expectations: does the menu display when
      * clicked and does it hide when clicked again.
      */
+
 
     /* TODO: Write a new test suite named "Initial Entries" */
 
@@ -87,4 +104,4 @@ $(function() {
      * by the loadFeed function that the content actually changes.
      * Remember, loadFeed() is asynchronous.
      */
-}());
+});
