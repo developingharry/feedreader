@@ -59,14 +59,10 @@ $(function() {
 
         //load async function
         beforeEach(function(done) {
-            loadFeed(0, function() {
-                done();
+            loadFeed(0,done);
             });
-        });
 
         it('leaves a single .entry element in the .feed container', function(done) {
-            var feed = $('.feed');
-            var entry = $('.entry');
             var entrySearch = document.querySelector(".feed").getElementsByClassName("entry").length;
             expect(entrySearch).toBeGreaterThan(0);
             done();
@@ -77,10 +73,11 @@ $(function() {
     describe('New Feed Selection', function() {
 
         //load async function
-        var existingContent;
+        var existingContent = $('.feed').text;
         beforeEach(function(done) {
             loadFeed(0, function() {
-                initFeedSelection = $('.feed').html;
+                existingContent = document.querySelector(".feed").innerHTML;
+                console.log(existingContent);
                 loadFeed(1, function() {
                     done();
                 });
@@ -88,7 +85,8 @@ $(function() {
         });
 
         it("is populated with new content", function(done) {
-            var newContent = $('.feed').html;
+            var newContent = document.querySelector(".feed").innerHTML;
+            console.log(newContent);
             expect(existingContent).not.toBe(newContent);
             done();
         });

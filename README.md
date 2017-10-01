@@ -27,4 +27,4 @@
 
 ## Installation
 
-> Should you need to edit the test suite, simply open the feedreader.js file within the jasmine/spec folder.
+> Open index.html in your browser to run the tests.
